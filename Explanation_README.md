@@ -1,0 +1,17 @@
+server.js: This file is the entry point of your application. It sets up the Express server, establishes the server's configuration (e.g., port, middleware), and defines the routes for handling incoming requests. It requires the necessary routes from the routes directory and establishes the server by listening on a specific port.
+
+connection.js: This file contains the configuration for establishing a connection to your mySQL database using Sequelize. It typically includes the database credentials (e.g., database name, username, password) and any additional configuration options required by your specific database management system (DBMS). The file exports the configured Sequelize instance, which can be imported in other files that need to interact with the database.
+
+.env: This file is used for environment variables, such as database credentials, API keys, or any other sensitive information. It allows you to store these values outside of your codebase, providing a more secure way to manage sensitive data. The values in this file can be accessed in your application using a library like dotenv.
+
+category.js (Model): This file defines the Category model using Sequelize. It specifies the table's structure, including column definitions, data types, and relationships with other models. In this file, you can define validation rules, associations, and other model-specific configurations. The model is exported for use in other parts of your application.
+
+category-routes.js (Routes): This file defines the routes related to categories. It uses the Express Router to define the HTTP endpoints for handling CRUD operations (create, read, update, delete) on categories. Each route is associated with a specific HTTP method (GET, POST, PUT, DELETE) and is responsible for invoking the corresponding controller method to process the request. The file exports the router instance, which can be used in server.js to register the category routes.
+
+category-seeds.js (Seeds): This file contains the seed data and the logic to populate the database with initial data for categories. The seedCategories function is typically called from a separate script, such as index.js or a dedicated seed script, to execute the seeding process. The seed function uses the Category model to bulk create the category records in the database.
+
+index.js: This file acts as the entry point for the script that populates the database with seed data. It requires the necessary seed files (category-seeds.js, etc.) and executes the seeding functions in the desired order. It can also handle other setup tasks, such as synchronizing the models with the database and performing any necessary migrations.
+
+To summarize, server.js sets up the server and routes, connection.js establishes the database connection, .env stores sensitive information, the model files define the database structure and associations, the route files handle incoming requests, and the seed files populate the database with initial data. Sequelize acts as a middleware between your Node.js application and the database, providing an alternative means of interacting with the database and managing your data.
+
+By organizing your code in this way, you can separate concerns and maintain a modular structure that promotes code reusability and maintainability.
