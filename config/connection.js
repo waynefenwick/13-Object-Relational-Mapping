@@ -12,4 +12,7 @@ const sequelize = process.env.JAWSDB_URL
       },
     });
 
-module.exports = sequelize;
+module.exports = sequelize; 
+
+// Brings in sequelize library
+// sequelize helps deal with database
