@@ -1,8 +1,7 @@
-// import important parts of sequelize library
 const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
 const sequelize = require('../config/connection');
-const Category = require('./Category');
+// const Category = require('./Category');
+// const Tag = require('./Tag');
 
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
@@ -17,15 +16,15 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: {
+    productName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
-        isDecimal: true
+      isDecimal: true,
       }
     },
     stock: {
@@ -33,14 +32,14 @@ Product.init(
       allowNull: false,
       defaultValue: 10,
       validate: {
-        isNumeric: true
+      isNumeric: true,
       }
     },
-    category_id: {
+    categoryId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'category',
-        key: 'id'
+      model: 'category',
+      key: 'id',
       }
     },
   },
@@ -52,15 +51,5 @@ Product.init(
     modelName: 'product',
   }
 );
-
-// `Product` belongs to `Category`: product can only have 1 category
-Product.belongsTo(Category, { foreignKey: 'categoryId', as: 'category' });
-
-// 'Product' belongs to many `Product` models. Allow products to have multiple tags
-Product.belongsToMany(Tag, {
-  through: 'ProductTag',
-  foreignKey: 'productId',
-  as: 'tags',
-});
 
 module.exports = Product;

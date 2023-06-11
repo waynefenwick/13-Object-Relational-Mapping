@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-
-const sequelize = require('../config/connection.js');
+const sequelize = require('../config/connection');
+// const Product = require('./Product');
 
 class Category extends Model {}
 
@@ -11,15 +11,17 @@ Category.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
-    category_name:{
+    categoryName: {
       type: DataTypes.STRING,
-      allowNull: false
-    }
+      allowNull: false,
+    },
   },
   {
+    // Link to database connection
     sequelize,
+    // Set to false to remove `created_at` and `updated_at` fields
     timestamps: false,
     freezeTableName: true,
     underscored: true,
@@ -27,10 +29,4 @@ Category.init(
   }
 );
 
-// `Category` has many `Product` models: a category can have many product models
-Category.hasMany(Product, { foreignKey: 'categoryId', as: 'products' });
-
 module.exports = Category;
-
-// See ### Database Models in README
-

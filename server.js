@@ -1,39 +1,28 @@
-require('dotenv').config(); // Load the environment variables from .env file
-
 const express = require('express');
-const { Sequelize } = require('sequelize');
 const routes = require('./routes');
-const { Product, Category, Tag, ProductTag } = require('./models');
+const sequelize = require('./config/connection'); // Update the path if necessary
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: 'localhost',
-  dialect: 'mysql',
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Initialize the models
-Product.init(sequelize);
-Category.init(sequelize);
-Tag.init(sequelize);
-ProductTag.init(sequelize);
+app.use(routes);
 
-// Define associations between the models
-Product.belongsTo(Category, { foreignKey: 'category_id', as: 'category' });
-Category.hasMany(Product, { foreignKey: 'category_id', as: 'products' });
-Product.belongsToMany(Tag, { through: ProductTag, foreignKey: 'product_id', as: 'tags' });
-Tag.belongsToMany(Product, { through: ProductTag, foreignKey: 'tag_id', as: 'products' });
-
-// Sync models with the database
-sequelize.sync({ force: false }).then(() => {
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
-  app.use(routes);
-
-  app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}!`);
+// Establish the database connection and sync sequelize models
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Database connection has been established successfully.');
+    return sequelize.sync({ force: false });
+  })
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`App listening on port ${PORT}!`);
+    });
+  })
+  .catch((err) => {
+    console.error('Unable to connect to the database:', err);
   });
-}).catch((error) => {
-  console.error('Unable to sync database:', error);
-});
+
