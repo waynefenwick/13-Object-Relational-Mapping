@@ -1,12 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// const Product = require('./Product');
 
+// Initialize Category model (table) by extending off Sequelize's Model class
 class Category extends Model {}
 
+// Set up fields and rules for Category model
 Category.init(
   {
-    // define columns
+    // define columns -- see sequalize documentation (https://sequelize.org/)
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -21,7 +22,6 @@ Category.init(
   {
     // Link to database connection
     sequelize,
-    // Set to false to remove `created_at` and `updated_at` fields
     timestamps: false,
     freezeTableName: true,
     underscored: true,

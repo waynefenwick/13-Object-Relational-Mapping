@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
-// Get all products
+// Get all categories (insomnia address for example: http://localhost:3001/api/products)
 router.get('/', async (req, res) => {
   try {
     const products = await Product.findAll({
