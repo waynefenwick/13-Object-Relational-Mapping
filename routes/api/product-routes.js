@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     res.json(products);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error1' });
   }
 });
 
@@ -51,7 +51,7 @@ router.get('/:id', async (req, res) => {
     res.json(product);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error2' });
   }
 });
 
@@ -125,7 +125,7 @@ router.delete('/:id', async (req, res) => {
     res.json({ message: 'Product deleted successfully' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error3' });
   }
 });
 

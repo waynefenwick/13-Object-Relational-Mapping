@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
-// The `/api/categories` endpoint
-// Get all categories
+// Get all categories (insomnia address for example: http://localhost:3001/api/categories))
 router.get('/', async (req, res) => {
   try {
     const categories = await Category.findAll({
@@ -16,12 +15,12 @@ router.get('/', async (req, res) => {
     res.json(categories);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error1' });
   }
 });
 
 
- // Get one category by its `id` value
+ // Get one category by its `id` value (insomnia address for example: http://localhost:3001/api/categories/1)
 router.get('/:id', async (req, res) => {
   try {
     const category = await Category.findByPk(req.params.id, {
@@ -39,7 +38,7 @@ router.get('/:id', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Big Server error' });
+    res.status(500).json({ message: 'Server error2' });
   }
 });
 
@@ -50,7 +49,7 @@ router.post('/', async (req, res) => {
     res.status(201).json(category);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error3' });
   }
 });
 
@@ -66,7 +65,7 @@ router.put('/:id', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error4' });
   }
 });
 
@@ -82,7 +81,7 @@ router.delete('/:id', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error5' });
   }
 });
 

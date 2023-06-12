@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     res.json(tags);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error1' });
   }
 });
 
@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
     res.json(tag);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error2' });
   }
 });
 
@@ -68,7 +68,7 @@ router.get('/:id', async (req, res) => {
       res.json(tag);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: 'Server error' });
+      res.status(500).json({ message: 'Server error3' });
     }
   });
 
@@ -87,7 +87,7 @@ router.delete('/:id', async (req, res) => {
     res.json(tag);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error4' });
   }
 });
 
