@@ -9,7 +9,9 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'products',
+          as: 'tag_products', // Use the correct alias 'tag_products' here
+          through: ProductTag,
+          attributes: ['id', 'product_name'],
         },
       ],
     });
@@ -27,7 +29,9 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'products',
+          as: 'tag_products', // Use the correct alias 'tag_products' here
+          through: ProductTag,
+          attributes: ['id', 'product_name'],
         },
       ],
     });
