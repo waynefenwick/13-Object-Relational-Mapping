@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'products',
+          as: 'products', // Use the correct alias 'products' here
         },
       ],
     });
@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 
  // Get one category by its `id` value
 router.get('/:id', async (req, res) => {
@@ -38,7 +39,7 @@ router.get('/:id', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Big Server error' });
   }
 });
 
