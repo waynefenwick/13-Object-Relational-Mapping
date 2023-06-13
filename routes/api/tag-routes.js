@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'tags',
+          as: 'products',
           through: ProductTag,
           attributes: ['id', 'product_name'],
         },
@@ -28,22 +28,22 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'tags',
+          as: 'products',
           through: ProductTag,
-          attributes: ['id', 'product_name'],
         },
       ],
     });
     if (!tag) {
-      res.status(404).json({ message: 'Tag not found' });
+      res.status(404).json({ message: 'No tag found with this id!' });
       return;
     }
     res.json(tag);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error2' });
+    res.status(500).json({ message: 'Server error' });
   }
 });
+
 
 // Create a new tag
   router.post('/', async (req, res) => {

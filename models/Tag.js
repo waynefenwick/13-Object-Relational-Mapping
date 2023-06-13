@@ -14,6 +14,7 @@ Tag.init(
     },
     tagName: {
       type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {
@@ -24,12 +25,5 @@ Tag.init(
     modelName: 'tag',
   }
 );
-
-// 'Tag' belongs to many `Product` models. Allow tags and tags to have many products
-// Tag.belongsToMany(Product, {
-//   through: 'ProductTag',
-//   foreignKey: 'tag_id',
-//   as: 'products'
-// });
 
 module.exports = Tag;

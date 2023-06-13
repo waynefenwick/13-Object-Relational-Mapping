@@ -5,8 +5,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const products = await Product.findAll({
-      include: [
-        {
+      include: [{
           model: Category,
           as: 'category',
         },
@@ -26,7 +25,7 @@ router.get('/', async (req, res) => {
 });
 
  // Get product by id ('/:id); (insomnia address for http://localhost:3001/api/products/1...where :id is replaced by the product id number)
- router.get('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const product = await Product.findOne({
       where: { id: req.params.id },
@@ -34,12 +33,6 @@ router.get('/', async (req, res) => {
         {
           model: Category,
           as: 'category',
-        },
-        {
-          model: Tag,
-          as: 'tags',
-          through: ProductTag,
-          attributes: ['id', 'tag_name'],
         },
       ],
     });
@@ -53,6 +46,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Server error2' });
   }
 });
+
 
 // Create a new product
 router.post('/', async (req, res) => {
