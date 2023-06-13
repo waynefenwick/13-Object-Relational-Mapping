@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
-const sequelize = require('./config/connection'); // Update the path if necessary
+const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,4 +25,3 @@ sequelize
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
-

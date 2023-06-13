@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Initialize Product model (table) by extending off Sequelize's Model class
+// Initializes Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
 
-// Set up fields and rules for Product model
+// Sets up fields and rules for Product model
 Product.init(
   {
     // define columns -- see sequalize documentation (https://sequelize.org/)
@@ -42,7 +42,7 @@ Product.init(
     },
   },
   {
-    // Link to database connection
+    // Links to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,

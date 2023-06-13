@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Initialize Category model (table) by extending off Sequelize's Model class
+// Initializes Category model (table) by extending off Sequelize's Model class
 class Category extends Model {}
 
-// Set up fields and rules for Category model
+// Sets up fields and rules for Category model
 Category.init(
   {
     // define columns -- see sequalize documentation (https://sequelize.org/)
@@ -20,7 +20,7 @@ Category.init(
     },
   },
   {
-    // Link to database connection
+    // Links to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,
