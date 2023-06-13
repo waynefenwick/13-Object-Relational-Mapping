@@ -1,15 +1,14 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
-// Get all tags
+// Get all ('/') tags (insomnia address for example: http://localhost:3001/api/tags)
 router.get('/', async (req, res) => {
   try {
     const tags = await Tag.findAll({
       include: [
         {
           model: Product,
-          as: 'tag_products', // Use the correct alias 'tag_products' here
+          as: 'tags',
           through: ProductTag,
           attributes: ['id', 'product_name'],
         },
@@ -22,14 +21,14 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a single tag by it's id
+// Get tags by id (insomnia address for example: http://localhost:3001/api/1)
 router.get('/:id', async (req, res) => {
   try {
     const tag = await Tag.findByPk(req.params.id, {
       include: [
         {
           model: Product,
-          as: 'tag_products', // Use the correct alias 'tag_products' here
+          as: 'tags',
           through: ProductTag,
           attributes: ['id', 'product_name'],
         },

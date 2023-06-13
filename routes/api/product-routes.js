@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// Get all categories (insomnia address for example: http://localhost:3001/api/products)
+// Get all ('/') products (insomnia address for example: http://localhost:3001/api/products)
 router.get('/', async (req, res) => {
   try {
     const products = await Product.findAll({
@@ -25,8 +25,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get one product by its `id` value
-router.get('/:id', async (req, res) => {
+ // Get product by id ('/:id); (insomnia address for http://localhost:3001/api/products/1...where :id is replaced by the product id number)
+ router.get('/:id', async (req, res) => {
   try {
     const product = await Product.findOne({
       where: { id: req.params.id },

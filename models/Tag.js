@@ -1,4 +1,4 @@
-const { Model, DataTypes, STRING } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 const Product = require('./Product');
 
@@ -10,10 +10,10 @@ Tag.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     tagName: {
-      type: STRING
+      type: DataTypes.STRING,
     }
   },
   {
@@ -21,7 +21,7 @@ Tag.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'tag'
+    modelName: 'tag',
   }
 );
 
