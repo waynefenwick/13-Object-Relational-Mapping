@@ -14,13 +14,15 @@ Category.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    
     categoryName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
+
+  // Links to database connection
   {
-    // Links to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,

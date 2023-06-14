@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'products', // Use the correct alias 'products' here
+          as: 'products',
         },
       ],
     });

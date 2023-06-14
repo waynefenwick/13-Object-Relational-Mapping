@@ -13,6 +13,7 @@ ProductTag.init(
         primaryKey: true,
         autoIncrement: true,
       },
+
       productId: {
         type: DataTypes.INTEGER,
         references: {
@@ -20,6 +21,7 @@ ProductTag.init(
           key: 'id',
         }
       },
+
       tagId: {
         type: DataTypes.INTEGER,
         references: {
@@ -28,8 +30,9 @@ ProductTag.init(
         }
       }
   },
+
+  // Links to database connection
   {
-    // Links to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,

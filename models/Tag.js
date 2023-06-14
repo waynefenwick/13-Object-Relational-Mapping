@@ -14,13 +14,15 @@ Tag.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     tagName: {
       type: DataTypes.STRING,
       allowNull: false,
     }
   },
+
+  // Links to database connection
   {
-    // Links to database connection
     sequelize,
     timestamps: false,
     freezeTableName: true,
