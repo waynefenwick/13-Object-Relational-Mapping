@@ -11,7 +11,7 @@
 &nbsp;
 
 ## Description
-AS A manager at an internet retail company I WANT a back end for my e-commerce website that uses the latest technologies SO THAT my company can compete with other e-commerce companies. WHEN I test API POST, PUT, and DELETE routes in Insomnia THEN I am able to successfully create, update, and delete data in my database.
+As a manager at an internet retail company I would like a back end for my e-commerce website. This back end uses the latest technologies in keeping data update so that my company can compete with other e-commerce companies. When I run tests on API POST, PUT, and DELETE routes in Insomnia, I am able to quickly and successfully make necessary modifications to data in my database.
 
 &nbsp;
 
@@ -28,11 +28,21 @@ AS A manager at an internet retail company I WANT a back end for my e-commerce w
 
 ## Installation
 
-There are several steps
+There are several steps involved. The most important are to make sure you establish reliable and smooth flowing access to your mySQL account as well as the abiltiy to quickly and easily open a local port on your PC in order to use Insomnia effectively.
 
-* [Node.js Installation](https://nodejs.org/en)
+1. Make sure you have [Node.js](https://nodejs.org/en) installed.
+2. Install the following NPM modules on your root directory:
+     * "dotenv": 8.6.0
+     * "express": 4.18.2
+     * "mysql2": 2.3.3
+     * "sequelize": 6.32.0
+3. Clone this repo to your machine.
+4. Open .env and enter your database name and mySQL login crendentials.
+5. Open the server.js file in a terminal and type in 'npm start' to open up a port
+6. You will now be ready to use [Insomnia](https://insomnia.rest/download) to test API routes you have created.
+7. You will need to seed your database.
+8. There is also a video link to give you an idea how Insomnia works in testing your Object Relational Maps.
 
-* [NPM Installation](https://docs.npmjs.com/cli/v8/commands/npm-install)
 
 &nbsp;
 
@@ -42,7 +52,7 @@ There are several steps
 
 ## Usage
 
-several steps
+See the video
 
 &nbsp;
 
@@ -54,7 +64,6 @@ several steps
 _A brief overview of the project build_
 &nbsp;
 
-## Media
 
 ![Media](./develop/graphics/testing)
 
@@ -68,7 +77,7 @@ _A brief overview of the project build_
 
 ## Testing
 
-Postman or Insomnia
+Testing of these APIs or one that you create can be done through Insomnia or Postman.
 
 &nbsp;
 
@@ -78,10 +87,6 @@ Postman or Insomnia
 
 ## Contribution
 
-
-
-* [Original Source code](https://github.com/coding-boot-camp/potential-enigma)
-* [Guideline to Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
 &nbsp;
 
