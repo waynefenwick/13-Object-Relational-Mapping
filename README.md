@@ -67,7 +67,7 @@ _A brief overview of the project build_
 &nbsp;
 
 
-![Media](./develop/graphics/testing)
+![Media](./media/media_screenshot.png)
 
 * Visit [Full Media](https://drive.google.com/file/d/1RP5O_m4o5pA8fouVVtnfsFCCwfmUrG7Y/view) to see more details
 
