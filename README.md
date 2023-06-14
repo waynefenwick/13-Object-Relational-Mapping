@@ -32,16 +32,17 @@ There are several steps involved. The most important are to make sure you establ
 
 1. Make sure you have [Node.js](https://nodejs.org/en) installed.
 2. Install the following NPM modules on your root directory:
-     * "dotenv": 8.6.0
-     * "express": 4.18.2
-     * "mysql2": 2.3.3
-     * "sequelize": 6.32.0
+     * dotenv: 8.6.0
+     * express: 4.18.2
+     * mysql2: 2.3.3
+     * sequelize: 6.32.0
 3. Clone this repo to your machine.
 4. Open .env and enter your database name and mySQL login crendentials.
 5. Open the server.js file in a terminal and type in 'npm start' to open up a port
 6. You will now be ready to use [Insomnia](https://insomnia.rest/download) to test API routes you have created.
-7. You will need to seed your database.
-8. There is also a video link to give you an idea how Insomnia works in testing your Object Relational Maps.
+7. NOTE:
+     * You will need to create & seed your database.
+8. There is a video link below to give you an idea how Insomnia works in testing your Object Relational Mapping.
 
 
 &nbsp;
@@ -53,6 +54,7 @@ There are several steps involved. The most important are to make sure you establ
 ## Usage
 
 See the video
+
 
 &nbsp;
 
