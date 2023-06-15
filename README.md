@@ -38,11 +38,18 @@ There are several steps involved. The most important are to make sure you establ
      * sequelize: 6.32.0
 3. Clone this repo to your machine.
 4. Open .env and enter your database name and mySQL login crendentials.
-5. Open the server.js file in a terminal and type in 'npm start' to open up a port
-6. You will now be ready to use [Insomnia](https://insomnia.rest/download) to test API routes you have created.
-7. NOTE:
-     * You will need to create & seed your database.
-8. There is a video link below to give you an idea how Insomnia works in testing your Object Relational Mapping.
+5. Open a terminal on the project folder
+    * Login: mysql -p (your password)
+        * Type in 'SHOW DATABASES;' to see any databases in your account
+        * Type in 'DROP DATABASE databasename_db;' to delete a database
+        * Type in 'CREATE DATABASE databasename_db;' to create a database
+        * Type in 'SHOW DATABASES;' to verufy database was successfully created
+        * Quit mysql with 'quit;'
+6 Open a terminal on the seeds folder
+    * Type in ’npm run seed’ to seed the database
+7. Open a terminal on the server.js file and type in ’npm start’ to start the server
+8. You will now be ready to use [Insomnia](https://insomnia.rest/download) to test API routes you have created.
+9. There is a video link below to give you an overview how Insomnia works in testing API routes.
 
 
 &nbsp;
@@ -63,13 +70,14 @@ See the video
 
 
 ## Media
-_A brief overview of the project build_
+_A brief overview of the Insomnia build_
 &nbsp;
 
 
 ![Media](./media/media_screenshot.png)
 
-* Visit [Full Media](https://drive.google.com/file/d/1RP5O_m4o5pA8fouVVtnfsFCCwfmUrG7Y/view) to see more details
+* Visit [Full Media](https://drive.google.com/file/d/1DkHJtfiQkxQ5bsglmH0z2loxhrPzHSFu/view?usp=sharing) to see more details
+
 
 &nbsp;
 
