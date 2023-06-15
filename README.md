@@ -11,7 +11,7 @@
 &nbsp;
 
 ## Description
-As a manager at an internet retail company I would like a back end for my e-commerce website. This back end uses the latest technologies in keeping data update so that my company can compete with other e-commerce companies. When I run tests on API POST, PUT, and DELETE routes in Insomnia, I am able to quickly and successfully make necessary modifications to data in my database.
+As a manager at an internet retail company I would like a back end for my e-commerce website. This back end uses the latest technologies in keeping data updated so that my company can compete with other e-commerce companies. When I run tests on API POST, PUT, and DELETE routes in Insomnia, I am able to quickly and successfully make necessary modifications to data in my database.
 
 &nbsp;
 
@@ -43,7 +43,7 @@ There are several steps involved. The most important are to make sure you establ
         * Type in 'SHOW DATABASES;' to see any databases in your account
         * Type in 'DROP DATABASE databasename_db;' to delete a database
         * Type in 'CREATE DATABASE databasename_db;' to create a database
-        * Type in 'SHOW DATABASES;' to verufy database was successfully created
+        * Type in 'SHOW DATABASES;' to verify the database was successfully created
         * Quit mysql with 'quit;'
 6 Open a terminal on the seeds folder
     * Type in ’npm run seed’ to seed the database
